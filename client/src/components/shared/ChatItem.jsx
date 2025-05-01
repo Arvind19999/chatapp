@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { Link } from "../styles/StyledComponent";
 import { Box, Stack, Typography } from "@mui/material";
-// import AvatarCard from "./AvatarCard";
+import AvatarCard from "./AvatarCard";
 // import { motion } from "framer-motion";
 
 const ChatItem = ({
@@ -34,7 +34,7 @@ const ChatItem = ({
           padding: "1rem",
         }}
       >
-        {/* <AvatarCard avatar={avatar} /> */}
+        <AvatarCard avatar={avatar} />
 
         <Stack>
           <Typography>{name}</Typography>
