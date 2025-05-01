@@ -73,7 +73,7 @@ const Header = () => {
               }}
             >
               Chat App
-            </Typography>
+            </Typography> 
             <Box
               sx={{
                 display: { xs: "block", sm: "none" },
