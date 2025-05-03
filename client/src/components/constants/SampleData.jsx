@@ -46,19 +46,53 @@ export const samepleChats = [
     },
   ];
   
+  // export const sampleMessage = [
+  //   {
+  //     attachments: [],
+  //     content: "Testing message for chat apps",
+  //     _id: "sfnsdjkfsdnfkjsbnd",
+  //     sender: {
+  //       _id: "user._id",
+  //       name: "Chaman ",
+  //     },
+  //     chat: "chatId",
+  //     createdAt: "2024-02-12T10:41:30.630Z",
+  //   },
+  
+  //   {
+  //     attachments: [
+  //       {
+  //         public_id: "asdsad 2",
+  //         url: "https://www.w3schools.com/howto/img_avatar.png",
+  //       },
+  //     ],
+  //     content: "",
+  //     _id: "sfnsdjkfsdnfkdddjsbnd",
+  //     sender: {
+  //       _id: "sdfsdfsdf",
+  //       name: "Chaman  2",
+  //     },
+  //     chat: "chatId",
+  //     createdAt: "2024-02-12T10:41:30.630Z",
+  //   },
+  // ];
+  
+
   export const sampleMessage = [
     {
       attachments: [],
-      content: "L*uda ka Message hai",
+      content: "Testing message for chat apps",
       _id: "sfnsdjkfsdnfkjsbnd",
       sender: {
-        _id: "user._id",
+        avatar: "https://www.w3schools.com/howto/img_avatar.png",
         name: "Chaman ",
+        _id : "1234"
       },
       chat: "chatId",
+      groupChat: false,
       createdAt: "2024-02-12T10:41:30.630Z",
     },
-  
+
     {
       attachments: [
         {
@@ -69,14 +103,17 @@ export const samepleChats = [
       content: "",
       _id: "sfnsdjkfsdnfkdddjsbnd",
       sender: {
-        _id: "sdfsdfsdf",
+        avatar: "https://www.w3schools.com/howto/img_avatar.png",
         name: "Chaman  2",
+        _id : "556456"
       },
       chat: "chatId",
+      groupChat: true,
       createdAt: "2024-02-12T10:41:30.630Z",
     },
-  ];
-  
+  ]
+
+
   export const dashboardData = {
     users: [
       {
@@ -115,7 +152,7 @@ export const samepleChats = [
         },
       },
       {
-        name: "L*Da Luston Group",
+        name: "Message Group",
         avatar: ["https://www.w3schools.com/howto/img_avatar.png"],
         _id: "2",
         groupChat: true,
@@ -135,7 +172,7 @@ export const samepleChats = [
     messages: [
       {
         attachments: [],
-        content: "L*uda ka Message hai",
+        content: "Testing message for chat apps",
         _id: "sfnsdjkfsdnfkjsbnd",
         sender: {
           avatar: "https://www.w3schools.com/howto/img_avatar.png",
