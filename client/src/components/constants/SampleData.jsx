@@ -132,6 +132,30 @@ export const samepleChats = [
         friends: 20,
         groups: 25,
       },
+      {
+        name: "John Boi",
+        avatar: "https://www.w3schools.com/howto/img_avatar.png",
+        _id: "3",
+        username: "john_boi",
+        friends: 20,
+        groups: 25,
+      },
+      {
+        name: "John Boi",
+        avatar: "https://www.w3schools.com/howto/img_avatar.png",
+        _id: "4",
+        username: "john_boi",
+        friends: 20,
+        groups: 25,
+      },
+      {
+        name: "John Boi",
+        avatar: "https://www.w3schools.com/howto/img_avatar.png",
+        _id: "5",
+        username: "john_boi",
+        friends: 20,
+        groups: 25,
+      },
     ],
   
     chats: [

@@ -4,10 +4,11 @@ import moment from "moment";
 import React, { useEffect, useState } from "react";
 import AdminLayout from "../../components/layout/AdminLayout";
 import RenderAttachment from "../../components/shared/RenderAttachment";
-// import Table from "../../components/shared/Table";
+import Table from "../../components/shared/Table";
 // import { server } from "../../constants/config";
 // import { useErrors } from "../../hooks/hook";
 import { fileFormat, transformImage } from "../../lib/features";
+import { dashboardData } from "../../components/constants/SampleData";
 
 const columns = [
   {
@@ -86,60 +87,58 @@ const columns = [
   },
 ];
 
-// const MessageManagement = () => {
-//   const { loading, data, error } = useFetchData(
-//     `${server}/api/v1/admin/messages`,
-//     "dashboard-messages"
-//   );
-
-//   useErrors([
-//     {
-//       isError: error,
-//       error: error,
-//     },
-//   ]);
-
-//   const [rows, setRows] = useState([]);
-
-//   useEffect(() => {
-//     if (data) {
-//       setRows(
-//         data.messages.map((i) => ({
-//           ...i,
-//           id: i._id,
-//           sender: {
-//             name: i.sender.name,
-//             avatar: transformImage(i.sender.avatar, 50),
-//           },
-//           createdAt: moment(i.createdAt).format("MMMM Do YYYY, h:mm:ss a"),
-//         }))
-//       );
-//     }
-//   }, [data]);
-
-//   return (
-//     <AdminLayout>
-//       {loading ? (
-//         <Skeleton height={"100vh"} />
-//       ) : (
-//         <Table
-//           heading={"All Messages"}
-//           columns={columns}
-//           rows={rows}
-//           rowHeight={200}
-//         />
-//       )}
-//     </AdminLayout>
-//   );
-// };
-
-
 const MessageManagement = () => {
-        return (
-            <AdminLayout>
-                <div>MessageManagement</div>
-            </AdminLayout>
-        )
-}
+  // const { loading, data, error } = useFetchData(
+  //   `${server}/api/v1/admin/messages`,
+  //   "dashboard-messages"
+  // );
+
+  // useErrors([
+  //   {
+  //     isError: error,
+  //     error: error,
+  //   },
+  // ]);
+
+  const [rows, setRows] = useState([]);
+
+  useEffect(() => {
+    // if (data) {
+      setRows(
+        dashboardData.messages.map((i) => ({
+          ...i,
+          id: i._id,
+          sender: {
+            name: i.sender.name,
+            avatar: transformImage(i.sender.avatar, 50),
+          },
+          createdAt: moment(i.createdAt).format("MMMM Do YYYY, h:mm:ss a"),
+        }))
+      );
+    // }
+  }, []);
+
+  return (
+    <AdminLayout>
+      {(
+        <Table
+          heading={"All Messages"}
+          columns={columns}
+          rows={rows}
+          rowHeight={200}
+        />
+      )}
+    </AdminLayout>
+  );
+};
+
+
+// const MessageManagement = () => {
+//         return (
+//             <AdminLayout>
+//                 <div>MessageManagement</div>
+//             </AdminLayout>
+//         )
+// }
 
 export default MessageManagement;

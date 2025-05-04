@@ -3,10 +3,12 @@ import { Avatar, Skeleton, Stack } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import AdminLayout from "../../components/layout/AdminLayout";
 import AvatarCard from "../../components/shared/AvatarCard";
-// import Table from "../../components/shared/Table";
+import Table from "../../components/shared/Table";
 // import { server } from "../../constants/config";
 // import { useErrors } from "../../hooks/hook";
 import { transformImage } from "../../lib/features";
+import { dashboardData } from "../../components/constants/SampleData";
+
 
 const columns = [
   {
@@ -71,7 +73,7 @@ const columns = [
   },
 ];
 
-// const ChatManagement = () => {
+const ChatManagement = () => {
 //   const { loading, data, error } = useFetchData(
 //     `${server}/api/v1/admin/chats`,
 //     "dashboard-chats"
@@ -84,42 +86,40 @@ const columns = [
 //     },
 //   ]);
 
-//   const [rows, setRows] = useState([]);
+  const [rows, setRows] = useState([]);
 
-//   useEffect(() => {
-//     if (data) {
-//       setRows(
-//         data.chats.map((i) => ({
-//           ...i,
-//           id: i._id,
-//           avatar: i.avatar.map((i) => transformImage(i, 50)),
-//           members: i.members.map((i) => transformImage(i.avatar, 50)),
-//           creator: {
-//             name: i.creator.name,
-//             avatar: transformImage(i.creator.avatar, 50),
-//           },
-//         }))
-//       );
-//     }
-//   }, [data]);
+  useEffect(() => {
+    // if (data) {
+      setRows(
+        dashboardData.chats.map((i) => ({
+          ...i,
+          id: i._id,
+          avatar: i.avatar.map((i) => transformImage(i, 50)),
+          members: i.members.map((i) => transformImage(i.avatar, 50)),
+          creator: {
+            name: i.creator.name,
+            avatar: transformImage(i.creator.avatar, 50),
+          },
+        }))
+      );
+    // }
+  }, []);
 
-//   return (
-//     <AdminLayout>
-//       {loading ? (
-//         <Skeleton height={"100vh"} />
-//       ) : (
-//         <Table heading={"All Chats"} columns={columns} rows={rows} />
-//       )}
-//     </AdminLayout>
-//   );
-// };
+  return (
+    <AdminLayout>
+      {(
+        <Table heading={"All Chats"} columns={columns} rows={rows} />
+      )}
+    </AdminLayout>
+  );
+};
 
-const ChatManagement = () => {
-    return (
-        <AdminLayout>
-            <div>ChatManagement</div>
-        </AdminLayout>
-    )
-}
+// const ChatManagement = () => {
+//     return (
+//         <AdminLayout>
+//             <div>ChatManagement</div>
+//         </AdminLayout>
+//     )
+// }
 
 export default ChatManagement;
